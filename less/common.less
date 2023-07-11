@@ -1,0 +1,157 @@
+.wrapper {
+    width: 900px;
+    margin: 0 auto;
+}
+// 主色调：浅紫 #CC99CC   字体主色调 #4f4f4f    价钱字体色调#cc3377
+
+body {
+    background-color: #f0e0e0;
+}
+
+// 顶部
+header {
+    height: 40px;
+    background-color: #c892c8;
+    .wrapper {
+        position: relative;
+        ul {
+            display: flex;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            li {
+                height: 100%;
+                a {
+                    padding: 10px 10px;
+                    margin: 0 10px;
+                    line-height: 40px;
+                    color: #4f4f4f;
+                    &:hover{
+                        position: relative;
+                        top: -2px;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 导航栏
+.nav {
+    height: 70px;
+    background-color: #cc99cc;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        a,
+        .myOrder {
+            padding: 15px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            &.active {
+                color: pink;
+            }
+            &:hover{
+                position: relative;
+                top: -2px;
+                left: 0;
+            }
+        }
+        li {
+            position: relative;
+            .detile {
+                display: none;
+                position: absolute;
+                top: 48px;
+                left: 6px;
+                border: 0;
+                background-color: #c892c8;
+                z-index: 1;
+                a {
+                    display: block;
+                    padding: 20px 14px;
+                    border-bottom: 1px solid rgba(79, 79, 79, .5);
+                    text-align: center;
+                    &:hover {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                    }
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+        .logo {
+            display: inline-block;
+            margin-right: 10px;
+            width: 72px;
+            height: 63px;
+            background-image: url(../images/透明2.png);
+            vertical-align: middle;
+        }
+    }
+}
+
+// 底部版权
+footer {
+    background-color: #CC99CC;
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 14px;
+        height: 70px;
+        width: 780px;
+        border-bottom: 2px solid #4f4f4f;
+        span {
+            display: inline-block;
+            height: 30px;
+            width: 40px;
+            background-image: url(../images/sprites.png);
+            vertical-align: -8px;
+        }
+        p {
+            display: inline-block;
+            font-size: 18px;
+            cursor: default;
+        }
+        .cheap>span {
+            background-position: -10px -14px;
+        }
+        .high_quality>span {
+            background-position: -72px -14px;
+        }
+        .fast>span {
+            background-position: -140px -14px;
+        }
+    }
+    .bottom {
+        height: 80px;
+        div {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px auto;
+            width: 330px;
+            font-size: 18px;
+            a {
+                padding: 8px;
+                &:hover{
+                    position: relative;
+                    top: -2px;
+                    left: 0;
+                }
+            }
+        }
+        p {
+            text-align: center;
+        }
+    }
+}

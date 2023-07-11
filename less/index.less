@@ -1,0 +1,553 @@
+/* 导航栏具体内容 */
+// 所有板块都隐藏，active的出现
+.content {
+    .item {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+}
+// 板块1：悦己花店
+.index1 {
+    padding: 20px 22px;
+    // 轮播图
+    .banner {
+        display: flex;
+        height: 450px;
+        .left {
+            position: relative;
+            height: 100%;
+            width: 600px;
+            .btn1,
+            .btn2 {
+                position: absolute;
+                top: 210px;
+                width: 30px;
+                height: 30px;
+                border: 1px solid #eee;
+                border-radius: 50%;
+                background-color: transparent;
+                cursor: pointer;
+            }
+            .btn1 {
+                left: 10px;
+            }
+            .btn2 {
+                right: 10px;
+            }
+            .dot {
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                bottom: 30px;
+                left: 280px;
+                li {
+                    margin-right: 8px;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    border: 1px solid #eee;
+                    background-color: transparent;
+                    &.active {
+                        background-color: #efe8e8;
+                    }
+                }
+            }
+            .pic {
+                width: 100%;
+                height: 100%;
+                a {
+                    display: none;
+                    width: 600px;
+                    height: 450px;
+                    cursor: default;
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .right {
+            flex: 1;
+            height: 100%;
+            overflow: hidden;
+            background-color: #eee;
+            ul {
+                animation: move 14s linear infinite;
+                li {
+                    height: 150px;
+                }
+            }
+            &:hover.right ul {
+                animation-play-state: paused;
+            }
+        }
+    }
+    // 当季新品、店长推荐、限时折扣
+    .new_product,
+    .recommend,
+    .discount {
+        margin-top: 40px;
+        min-height: 100px;
+        background-color: rgb(242, 196, 203);
+    }
+    .new_product,
+    .recommend,
+    .discount {
+        .top {
+            position: relative;
+            height: 50px;
+            background-color: #cc99cc;
+            h4 {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                font-size: 20px;
+            }
+            p {
+                position: absolute;
+                top: 18px;
+                left: 100px;
+                font-size: 14px;
+                color: #4f4f4f;
+            }
+        }
+        .product {
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                li {
+                    margin: 10px 12px;
+                    width: 190px;
+                    height: 250px;
+                    background-color: #efe8e8;
+                    cursor: pointer;
+                    img {
+                        margin: 18px 22px;
+                        width: 145px;
+                        height: 140px;
+                    }
+                    p {
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        margin-bottom: 5px;
+                        // height: 42px;
+                        font-size: 14px;
+                        color: #4f4f4f;
+                    }
+                    b {
+                        margin-left: 10px;
+                        font-size: 13px;
+                        color: #ce1e6d;
+                        span {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .discount {
+        .disc_product {
+            overflow: hidden;   // 解决浮动产生的影响
+            .countdown {
+                float: left;
+                width: 200px;
+                height: 210px;
+                background-color: #eba7c5;
+                h4 {
+                    margin: 10px 30px;
+                    font-weight: normal;
+                    font-size: 25px;
+                    text-align: center;
+                }
+                span {
+                    display: block;
+                    margin: 0 76px;
+                    height: 60px;
+                    width: 45px;
+                    background-image: url(../images/透明鲜花.PNG);
+                    background-size: contain;
+                }
+                p {
+                    margin-top: 13px;
+                    font-size: 16px;
+                    text-align: center;
+                }
+                .endding_time {
+                    font-size: 16px;
+                    font-weight: bold;
+                    text-align: center;
+                    color: rgb(196, 9, 9);
+                }
+            }
+            ul {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                float: right;
+                width: 630px;
+                li {
+                    margin-top: 15px;
+                    width: 200px;
+                    height: 210px;
+                    background-color: #efe8e8;
+                    cursor: pointer;
+                    &:nth-child(1),
+                    &:nth-child(2),
+                    &:nth-child(3){
+                        margin-top: 0;
+                    }
+                    img {
+                        margin: 8px 27px;
+                        width: 145px;
+                        height: 132px;
+                    }
+                    p {
+                        margin: 0 8px;
+                        font-size: 13px;
+                        color: #4f4f4f;
+                    }
+                    b {
+                        margin-left: 8px;
+                        font-size: 12px;
+                        color: #ce1e6d;
+                        span {
+                            font-size: 16px;
+                            color: #ce1e6d;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 右侧电梯导航
+    .elevator {
+        position: fixed;
+        top: 130px;
+        right: 170px;
+        width: 50px;
+        height: 240px;
+        background-color: #cc99cc;
+        opacity: 0;
+        transition: all 0.4s;
+        div {
+            margin: 5px 5px;
+            padding-top: 8px;
+            width: 40px;
+            height: 55px;
+            font-size: 14px;
+            text-align: center;
+            letter-spacing: 2px;
+            border-bottom: 2px solid rgb(118, 117, 117);
+            cursor: pointer;
+            span {
+                display: block;
+                margin: 0 auto;
+                width: 22px;
+                height: 18px;
+                background-color: #fff;
+            }
+            &.active {
+                font-weight: bold;
+                color: pink;
+            }
+        }
+        .back_top{
+            border-bottom: 0;
+        }
+    }
+}
+// 板块2：全部鲜花
+// 板块3；鲜花礼盒
+.index2,
+.index3 {
+    padding: 20px 22px;
+    .background {
+        min-height: 100px;
+        background-color: #f2c4cb;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px 10px;
+            li {
+                position: relative;
+                overflow: hidden;
+                height: 240px;
+                width: 209px;
+                border-right: 1px solid #bfbfbf;
+                background-color: #efe8e8;
+                cursor: pointer;
+                &:hover .introduce{
+                    bottom: 0;
+                }
+                &:nth-child(4n) {
+                    border-right: 0;
+                }
+                img {
+                    position: absolute;
+                    left: 34px;
+                    top: 38px;
+                    height: 140px;
+                    width: 140px;
+                }
+                b {
+                    position: absolute;
+                    left: 5px;
+                    top: 5px;
+                    font-size: 13px;
+                    color: #ce1e6d;
+                    span {
+                        font-size: 18px;
+                    }
+                }
+                .introduce {
+                    position: absolute;
+                    left: 0;
+                    bottom: -70px;
+                    padding-top: 23px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    height: 70px;
+                    width: 100%;
+                    font-size: 15px;
+                    background-image: linear-gradient(transparent, rgba(0,0,0,0.3));
+                    transition: all 0.8s;
+                }
+            }
+        }
+    }
+}
+// 板块4：全部订单
+// 板块5：待付款
+.index4,
+.index5 {
+    padding: 20px 22px;
+    .background {
+        min-height: 100px;
+        background-color: #f2c4cb;
+        h4 {
+            padding-left: 10px;
+            height: 50px;
+            background-color: #cc99cc;
+            font-size: 20px;
+            line-height: 50px;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 50px;
+            height: 170px;
+            border-bottom: 2px solid #767575;
+            &:last-child {
+                border-bottom: 0;
+            }
+            img {
+                height: 148px;
+                width: 148px;
+                cursor: default;
+            }
+            .info {
+                position: relative;
+                padding: 10px 20px;
+                width: 580px;
+                height: 148px;
+                .intro {
+                    font-size: 18px;
+                    height: 26px;
+                    width: 480px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    cursor: default;
+                }
+                >p {
+                    margin: 25px 0;
+                    width: 170px;
+                    font-size: 18px;
+                    cursor: default;
+                }
+                .paying_state {
+                    display: flex;
+                    justify-content: space-between;
+                    position: absolute;
+                    bottom: 10px;
+                    left: 20px;
+                    width: 300px;
+                    >p {
+                        font-size: 18px;
+                        cursor: default;
+                        span {
+                            font-size: 14px;
+                            color: #c40909;
+                        }
+                        i {
+                            color: #c40909;
+                        }
+                    }
+                    >b {
+                        font-size: 18px;
+                        cursor: pointer;
+                        span {
+                            display: inline-block;
+                            height: 20px;
+                            width: 20px;
+                            background-color: #fff;
+                            vertical-align: -4px;
+                        }
+                    }
+                }
+                .num {
+                    position: absolute;
+                    right: 20px;
+                    top: 10px;
+                    cursor: default;
+                    span {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+// 板块6：购物车
+.index6 {
+    padding: 20px 22px;
+    .background {
+        min-height: 100px;
+        background-color: #f2c4cb;
+        h4 {
+            padding-left: 10px;
+            height: 50px;
+            background-color: #cc99cc;
+            font-size: 20px;
+            line-height: 50px;
+        }
+        li {
+            position: relative;
+            padding: 10px 40px;
+            height: 170px;
+            border-bottom: 2px solid #767575;
+            &:last-child{
+                border-bottom: 0;
+            }
+            >.check {
+                position: absolute;
+                top: 72px;
+                left: 30px;
+                width: 24px;
+                height: 24px;
+                border: 2px solid #eee;
+                border-radius: 50%;
+                background-color: transparent;
+                cursor: pointer;
+            }
+            .info {
+                display: flex;
+                justify-content: space-between;
+                img {
+                    margin-left: 35px;
+                    height: 148px;
+                    width: 148px;
+                }
+                .text {
+                    margin-right: 40px;
+                    padding: 16px 10px;
+                    height: 148px;
+                    width: 530px;
+                    p {
+                        margin-bottom: 70px;
+                        width: 510px;
+                        font-size: 18px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        cursor: default;
+                    }
+                    i {
+                        color: #c40909;
+                        font-size: 14px;
+                        cursor: default;
+                        span {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+            .num {
+                position: absolute;
+                bottom: 14px;
+                right: 90px;
+                .count {
+                    width: 70px;
+                    height: 30px;
+                    font-size: 16px;
+                    text-align: center;
+                    background-color: #eee;
+                }
+                button {
+                    width: 30px;
+                    height: 30px;
+                    font-size: 20px;
+                    border: 0;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+            }
+        }
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 35px;
+            height: 50px;
+            background-color: #cc99cc;
+            .left {
+                margin-top: 14px;
+                font-size: 18px;
+                .checkAll {
+                    margin-right: 6px;
+                    height: 20px;
+                    width: 20px;
+                    border :2px solid #eee;
+                    border-radius: 50%;
+                    background-color: transparent;
+                }
+            }
+            .right {
+                display: flex;
+                justify-content: space-between;
+                width: 210px;
+                margin-top: 8px;
+                margin-right: 20px;
+                .total {
+                    padding-top: 5px;
+                    font-size: 18px;
+                    i {
+                        font-size: 13px;
+                        color: #c40909;
+                        span {
+                            font-size: 18px;
+                        }
+                    }
+                }
+                .pay {
+                    width: 80px;
+                    height: 34px;
+                    border: 2px solid #eee;
+                    border-radius: 15px;
+                    font-size: 17px;
+                    text-align: center;
+                    line-height: 34px;
+                    background-color: #ed9bc0;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+@keyframes move {
+    to {
+        transform: translateY(-900px);
+    }
+}

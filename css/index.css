@@ -1,0 +1,575 @@
+/* 导航栏具体内容 */
+.content .item {
+  display: none;
+}
+.content .item.active {
+  display: block;
+}
+.index1 {
+  padding: 20px 22px;
+}
+.index1 .banner {
+  display: flex;
+  height: 450px;
+}
+.index1 .banner .left {
+  position: relative;
+  height: 100%;
+  width: 600px;
+}
+.index1 .banner .left .btn1,
+.index1 .banner .left .btn2 {
+  position: absolute;
+  top: 210px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+.index1 .banner .left .btn1 {
+  left: 10px;
+}
+.index1 .banner .left .btn2 {
+  right: 10px;
+}
+.index1 .banner .left .dot {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 30px;
+  left: 280px;
+}
+.index1 .banner .left .dot li {
+  margin-right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  background-color: transparent;
+}
+.index1 .banner .left .dot li.active {
+  background-color: #efe8e8;
+}
+.index1 .banner .left .pic {
+  width: 100%;
+  height: 100%;
+}
+.index1 .banner .left .pic a {
+  display: none;
+  width: 600px;
+  height: 450px;
+  cursor: default;
+}
+.index1 .banner .left .pic a.active {
+  display: block;
+}
+.index1 .banner .right {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  background-color: #eee;
+}
+.index1 .banner .right ul {
+  animation: move 14s linear infinite;
+}
+.index1 .banner .right ul li {
+  height: 150px;
+}
+.index1 .banner .right:hover.right ul {
+  animation-play-state: paused;
+}
+.index1 .new_product,
+.index1 .recommend,
+.index1 .discount {
+  margin-top: 40px;
+  min-height: 100px;
+  background-color: #f2c4cb;
+}
+.index1 .new_product .top,
+.index1 .recommend .top,
+.index1 .discount .top {
+  position: relative;
+  height: 50px;
+  background-color: #cc99cc;
+}
+.index1 .new_product .top h4,
+.index1 .recommend .top h4,
+.index1 .discount .top h4 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+}
+.index1 .new_product .top p,
+.index1 .recommend .top p,
+.index1 .discount .top p {
+  position: absolute;
+  top: 18px;
+  left: 100px;
+  font-size: 14px;
+  color: #4f4f4f;
+}
+.index1 .new_product .product ul,
+.index1 .recommend .product ul,
+.index1 .discount .product ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.index1 .new_product .product ul li,
+.index1 .recommend .product ul li,
+.index1 .discount .product ul li {
+  margin: 10px 12px;
+  width: 190px;
+  height: 250px;
+  background-color: #efe8e8;
+  cursor: pointer;
+}
+.index1 .new_product .product ul li img,
+.index1 .recommend .product ul li img,
+.index1 .discount .product ul li img {
+  margin: 18px 22px;
+  width: 145px;
+  height: 140px;
+}
+.index1 .new_product .product ul li p,
+.index1 .recommend .product ul li p,
+.index1 .discount .product ul li p {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #4f4f4f;
+}
+.index1 .new_product .product ul li b,
+.index1 .recommend .product ul li b,
+.index1 .discount .product ul li b {
+  margin-left: 10px;
+  font-size: 13px;
+  color: #ce1e6d;
+}
+.index1 .new_product .product ul li b span,
+.index1 .recommend .product ul li b span,
+.index1 .discount .product ul li b span {
+  font-size: 18px;
+}
+.index1 .discount .disc_product {
+  overflow: hidden;
+}
+.index1 .discount .disc_product .countdown {
+  float: left;
+  width: 200px;
+  height: 210px;
+  background-color: #eba7c5;
+}
+.index1 .discount .disc_product .countdown h4 {
+  margin: 10px 30px;
+  font-weight: normal;
+  font-size: 25px;
+  text-align: center;
+}
+.index1 .discount .disc_product .countdown span {
+  display: block;
+  margin: 0 76px;
+  height: 60px;
+  width: 45px;
+  background-image: url(../images/透明鲜花.PNG);
+  background-size: contain;
+}
+.index1 .discount .disc_product .countdown p {
+  margin-top: 13px;
+  font-size: 16px;
+  text-align: center;
+}
+.index1 .discount .disc_product .countdown .endding_time {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #c40909;
+}
+.index1 .discount .disc_product ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  float: right;
+  width: 630px;
+}
+.index1 .discount .disc_product ul li {
+  margin-top: 15px;
+  width: 200px;
+  height: 210px;
+  background-color: #efe8e8;
+  cursor: pointer;
+}
+.index1 .discount .disc_product ul li:nth-child(1),
+.index1 .discount .disc_product ul li:nth-child(2),
+.index1 .discount .disc_product ul li:nth-child(3) {
+  margin-top: 0;
+}
+.index1 .discount .disc_product ul li img {
+  margin: 8px 27px;
+  width: 145px;
+  height: 132px;
+}
+.index1 .discount .disc_product ul li p {
+  margin: 0 8px;
+  font-size: 13px;
+  color: #4f4f4f;
+}
+.index1 .discount .disc_product ul li b {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #ce1e6d;
+}
+.index1 .discount .disc_product ul li b span {
+  font-size: 16px;
+  color: #ce1e6d;
+}
+.index1 .elevator {
+  position: fixed;
+  top: 130px;
+  right: 170px;
+  width: 50px;
+  height: 240px;
+  background-color: #cc99cc;
+  opacity: 0;
+  transition: all 0.4s;
+}
+.index1 .elevator div {
+  margin: 5px 5px;
+  padding-top: 8px;
+  width: 40px;
+  height: 55px;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #767575;
+  cursor: pointer;
+}
+.index1 .elevator div span {
+  display: block;
+  margin: 0 auto;
+  width: 22px;
+  height: 18px;
+  background-color: #fff;
+}
+.index1 .elevator div.active {
+  font-weight: bold;
+  color: pink;
+}
+.index1 .elevator .back_top {
+  border-bottom: 0;
+}
+.index2,
+.index3 {
+  padding: 20px 22px;
+}
+.index2 .background,
+.index3 .background {
+  min-height: 100px;
+  background-color: #f2c4cb;
+}
+.index2 .background ul,
+.index3 .background ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 10px;
+}
+.index2 .background ul li,
+.index3 .background ul li {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+  width: 209px;
+  border-right: 1px solid #bfbfbf;
+  background-color: #efe8e8;
+  cursor: pointer;
+}
+.index2 .background ul li:hover .introduce,
+.index3 .background ul li:hover .introduce {
+  bottom: 0;
+}
+.index2 .background ul li:nth-child(4n),
+.index3 .background ul li:nth-child(4n) {
+  border-right: 0;
+}
+.index2 .background ul li img,
+.index3 .background ul li img {
+  position: absolute;
+  left: 34px;
+  top: 38px;
+  height: 140px;
+  width: 140px;
+}
+.index2 .background ul li b,
+.index3 .background ul li b {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  font-size: 13px;
+  color: #ce1e6d;
+}
+.index2 .background ul li b span,
+.index3 .background ul li b span {
+  font-size: 18px;
+}
+.index2 .background ul li .introduce,
+.index3 .background ul li .introduce {
+  position: absolute;
+  left: 0;
+  bottom: -70px;
+  padding-top: 23px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 70px;
+  width: 100%;
+  font-size: 15px;
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+  transition: all 0.8s;
+}
+.index4,
+.index5 {
+  padding: 20px 22px;
+}
+.index4 .background,
+.index5 .background {
+  min-height: 100px;
+  background-color: #f2c4cb;
+}
+.index4 .background h4,
+.index5 .background h4 {
+  padding-left: 10px;
+  height: 50px;
+  background-color: #cc99cc;
+  font-size: 20px;
+  line-height: 50px;
+}
+.index4 .background li,
+.index5 .background li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px;
+  height: 170px;
+  border-bottom: 2px solid #767575;
+}
+.index4 .background li:last-child,
+.index5 .background li:last-child {
+  border-bottom: 0;
+}
+.index4 .background li img,
+.index5 .background li img {
+  height: 148px;
+  width: 148px;
+  cursor: default;
+}
+.index4 .background li .info,
+.index5 .background li .info {
+  position: relative;
+  padding: 10px 20px;
+  width: 580px;
+  height: 148px;
+}
+.index4 .background li .info .intro,
+.index5 .background li .info .intro {
+  font-size: 18px;
+  height: 26px;
+  width: 480px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+}
+.index4 .background li .info > p,
+.index5 .background li .info > p {
+  margin: 25px 0;
+  width: 170px;
+  font-size: 18px;
+  cursor: default;
+}
+.index4 .background li .info .paying_state,
+.index5 .background li .info .paying_state {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  width: 300px;
+}
+.index4 .background li .info .paying_state > p,
+.index5 .background li .info .paying_state > p {
+  font-size: 18px;
+  cursor: default;
+}
+.index4 .background li .info .paying_state > p span,
+.index5 .background li .info .paying_state > p span {
+  font-size: 14px;
+  color: #c40909;
+}
+.index4 .background li .info .paying_state > p i,
+.index5 .background li .info .paying_state > p i {
+  color: #c40909;
+}
+.index4 .background li .info .paying_state > b,
+.index5 .background li .info .paying_state > b {
+  font-size: 18px;
+  cursor: pointer;
+}
+.index4 .background li .info .paying_state > b span,
+.index5 .background li .info .paying_state > b span {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  vertical-align: -4px;
+}
+.index4 .background li .info .num,
+.index5 .background li .info .num {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: default;
+}
+.index4 .background li .info .num span,
+.index5 .background li .info .num span {
+  font-size: 18px;
+}
+.index6 {
+  padding: 20px 22px;
+}
+.index6 .background {
+  min-height: 100px;
+  background-color: #f2c4cb;
+}
+.index6 .background h4 {
+  padding-left: 10px;
+  height: 50px;
+  background-color: #cc99cc;
+  font-size: 20px;
+  line-height: 50px;
+}
+.index6 .background li {
+  position: relative;
+  padding: 10px 40px;
+  height: 170px;
+  border-bottom: 2px solid #767575;
+}
+.index6 .background li:last-child {
+  border-bottom: 0;
+}
+.index6 .background li > .check {
+  position: absolute;
+  top: 72px;
+  left: 30px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #eee;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+.index6 .background li .info {
+  display: flex;
+  justify-content: space-between;
+}
+.index6 .background li .info img {
+  margin-left: 35px;
+  height: 148px;
+  width: 148px;
+}
+.index6 .background li .info .text {
+  margin-right: 40px;
+  padding: 16px 10px;
+  height: 148px;
+  width: 530px;
+}
+.index6 .background li .info .text p {
+  margin-bottom: 70px;
+  width: 510px;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+}
+.index6 .background li .info .text i {
+  color: #c40909;
+  font-size: 14px;
+  cursor: default;
+}
+.index6 .background li .info .text i span {
+  font-size: 20px;
+}
+.index6 .background li .num {
+  position: absolute;
+  bottom: 14px;
+  right: 90px;
+}
+.index6 .background li .num .count {
+  width: 70px;
+  height: 30px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #eee;
+}
+.index6 .background li .num button {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.index6 .background .bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 35px;
+  height: 50px;
+  background-color: #cc99cc;
+}
+.index6 .background .bottom .left {
+  margin-top: 14px;
+  font-size: 18px;
+}
+.index6 .background .bottom .left .checkAll {
+  margin-right: 6px;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #eee;
+  border-radius: 50%;
+  background-color: transparent;
+}
+.index6 .background .bottom .right {
+  display: flex;
+  justify-content: space-between;
+  width: 210px;
+  margin-top: 8px;
+  margin-right: 20px;
+}
+.index6 .background .bottom .right .total {
+  padding-top: 5px;
+  font-size: 18px;
+}
+.index6 .background .bottom .right .total i {
+  font-size: 13px;
+  color: #c40909;
+}
+.index6 .background .bottom .right .total i span {
+  font-size: 18px;
+}
+.index6 .background .bottom .right .pay {
+  width: 80px;
+  height: 34px;
+  border: 2px solid #eee;
+  border-radius: 15px;
+  font-size: 17px;
+  text-align: center;
+  line-height: 34px;
+  background-color: #ed9bc0;
+  cursor: pointer;
+}
+@keyframes move {
+  to {
+    transform: translateY(-900px);
+  }
+}
