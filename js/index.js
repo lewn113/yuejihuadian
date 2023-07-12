@@ -164,8 +164,104 @@ for (let i = 0; i < check.length; i++) {
     })
 }
 
-/* 业务7：购物车加减号与数量联动 */
-
-
-
 /* 业务8：购物车合计模块 */
+const priceArr = []
+const total_price = document.querySelector('.index6 .bottom .total span')
+const span = document.querySelectorAll('.index6 .info .text span')
+for(let i = 0; i < check.length; i++) {
+    check[i].addEventListener('click', function() {
+        if (check[i].checked === true) {
+            const unit_price = +span[i].innerHTML
+            const num = +count[i].value
+            const per_price = unit_price * num 
+            priceArr[i] = per_price
+            // priceArr.splice(i,0,per_price)
+        } else {
+            priceArr[i] = 0
+            // priceArr.splice(i,1)
+        }
+        let sum = 0
+        for (let j = 0; j < check.length; j++) {
+            if (typeof priceArr[j] === 'number') {
+                sum = sum + priceArr[j]
+            }
+        }
+        total_price.innerHTML = sum
+    })
+    checkAll.addEventListener('click', function() {
+        if (checkAll.checked === true) {
+            const unit_price = +span[i].innerHTML
+            const num = +count[i].value
+            const per_price = unit_price * num 
+            priceArr[i] = per_price
+        } else {
+            priceArr[i] = 0
+        }
+        let sum = 0
+        for (let j = 0; j < check.length; j++) {
+            if (typeof priceArr[j] === 'number') {
+                sum = sum + priceArr[j]
+            }
+        }
+        total_price.innerHTML = sum
+    })
+}
+
+/* 业务7：购物车加减号与数量联动 */
+// 加号添加商品数量
+const item = document.querySelector('.index6 ul')
+const add = document.querySelectorAll('.index6 .num .add')
+const reduce = document.querySelectorAll('.index6 .num .reduce')
+const count = document.querySelectorAll('.index6 .num .count')
+const del = document.querySelectorAll('.index6 .delete')
+for (let i = 0; i < check.length; i++) {
+    let num = +count[i].value
+    add[i].addEventListener('click', function() {
+        num += 1
+        count[i].value = num
+        reduce[i].disabled = false
+        // 加号联动总价
+        if (check[i].checked === true) {
+            const unit_price = +span[i].innerHTML
+            const num2 = +count[i].value
+            const per_price = unit_price * num2 
+            priceArr[i] = per_price
+            let sum = 0
+            for (let j = 0; j < check.length; j++) {
+                if (typeof priceArr[j] === 'number') {
+                    sum = sum + priceArr[j]
+                }
+            }
+            total_price.innerHTML = sum
+        }
+    })
+    if (num <= 1) {
+        reduce[i].disabled = true
+    }
+    reduce[i].addEventListener('click', function(){
+        if (num === 2) {
+            reduce[i].disabled = true
+        }
+        num -= 1
+        count[i].value = num
+        // 减号联动总价
+        if (check[i].checked === true) {
+            const unit_price = +span[i].innerHTML
+            const num2 = +count[i].value
+            const per_price = unit_price * num2 
+            priceArr[i] = per_price
+            let sum = 0
+            for (let j = 0; j < check.length; j++) {
+                if (typeof priceArr[j] === 'number') {
+                    sum = sum + priceArr[j]
+                }
+            }
+            total_price.innerHTML = sum
+        }
+    })
+    // 删除商品
+    del[i].addEventListener('click', function(){
+        item.removeChild(item.childNodes[i])
+    })
+}
+

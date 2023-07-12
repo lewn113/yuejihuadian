@@ -28,6 +28,11 @@
   background-color: transparent;
   cursor: pointer;
 }
+.index1 .banner .left .iconfont {
+  padding-left: 2px;
+  font-size: 24px;
+  color: #eee;
+}
 .index1 .banner .left .btn1 {
   left: 10px;
 }
@@ -247,19 +252,19 @@
   border-bottom: 2px solid #767575;
   cursor: pointer;
 }
-.index1 .elevator div span {
-  display: block;
-  margin: 0 auto;
-  width: 22px;
-  height: 18px;
-  background-color: #fff;
-}
 .index1 .elevator div.active {
   font-weight: bold;
   color: pink;
 }
 .index1 .elevator .back_top {
   border-bottom: 0;
+}
+.index1 .elevator .back_top .icon-jiantoushang {
+  display: block;
+  margin: 0 auto;
+  height: 14px;
+  line-height: 10px;
+  font-size: 20px;
 }
 .index2,
 .index3 {
@@ -400,6 +405,7 @@
 .index5 .background li .info .paying_state > p {
   font-size: 18px;
   cursor: default;
+  line-height: 35px;
 }
 .index4 .background li .info .paying_state > p span,
 .index5 .background li .info .paying_state > p span {
@@ -415,13 +421,13 @@
   font-size: 18px;
   cursor: pointer;
 }
-.index4 .background li .info .paying_state > b span,
-.index5 .background li .info .paying_state > b span {
+.index4 .background li .info .paying_state > b .icon-team,
+.index5 .background li .info .paying_state > b .icon-team {
   display: inline-block;
   height: 20px;
-  width: 20px;
-  background-color: #fff;
-  vertical-align: -4px;
+  width: 18px;
+  font-size: 22px;
+  vertical-align: -2px;
 }
 .index4 .background li .info .num,
 .index5 .background li .info .num {
@@ -504,20 +510,38 @@
   position: absolute;
   bottom: 14px;
   right: 90px;
+  width: 132px;
 }
 .index6 .background li .num .count {
+  margin-left: 6px;
   width: 70px;
   height: 30px;
   font-size: 16px;
   text-align: center;
   background-color: #eee;
+  vertical-align: -5px;
 }
-.index6 .background li .num button {
-  width: 30px;
-  height: 30px;
-  font-size: 20px;
-  border: 0;
+.index6 .background li .num .reduce,
+.index6 .background li .num .add {
+  padding: 0;
+  margin-top: 6px;
+  font-size: 25px;
+  cursor: pointer;
+  border: 0px;
   background-color: transparent;
+}
+.index6 .background li .num .reduce {
+  float: left;
+}
+.index6 .background li .num .add {
+  float: right;
+}
+.index6 .background li .delete {
+  position: absolute;
+  right: 40px;
+  top: 66px;
+  color: #c40909;
+  font-size: 26px;
   cursor: pointer;
 }
 .index6 .background .bottom {
